@@ -25,6 +25,7 @@ export function heToEn(heDate: string): string {
 }
 
 function getHebrewVerbalDate(date: Date) {
-    const months = ['ינואר', 'פברואר', 'מרץ', 'אפריל', 'מאי', 'יוני', 'יולי', 'אוגוסט', 'ספטמבר', 'אוקטובר', 'נובמבר', 'דצמבר']
-    return date.getDate() + ' ב' + `${months[date.getMonth()]} ${date.getFullYear()}`
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateTimeFormat = new Intl.DateTimeFormat('he', options);
+    return dateTimeFormat.format(date)
 }
