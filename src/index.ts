@@ -1,15 +1,15 @@
 export function dateToVerbal(enDate: string | Date): string {
-    if (typeof enDate === 'string') enDate = new Date(enDate);
-    return getHebrewVerbalDate(enDate);
+    enDate = convertToDateHelper(enDate);
+    return getHebrewVerbalDateHelper(enDate);
 }
 
 export function heDateToVerbal(heDateString: string): string {
     const date = heToDate(heDateString);
-    return getHebrewVerbalDate(date)
+    return getHebrewVerbalDateHelper(date)
 }
 
 export function dateToNumeric(enDate: string | Date): string {
-    if (typeof enDate === 'string') enDate = new Date(enDate);
+    enDate = convertToDateHelper(enDate);
     return `${enDate.getDate()}/${enDate.getMonth() + 1}/${enDate.getFullYear()}`
 }
 
@@ -24,8 +24,20 @@ export function heToEn(heDate: string): string {
     return `${dateArr[1]}/${dateArr[0]}/${dateArr[2]}`
 }
 
-function getHebrewVerbalDate(date: Date) {
+export function getDiffBetweenDates(date1: Date | string, date2: Date | string) {
+    [date1, date2].forEach(date => date = convertToDateHelper(date))
+    const diffTime = Math.abs(Number(date2) - Number(date1));
+    return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+}
+
+function convertToDateHelper(date: string | Date): Date {
+    if (typeof date === 'string') date = new Date(date);
+    return date;
+}
+
+function getHebrewVerbalDateHelper(date: Date): string {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     const dateTimeFormat = new Intl.DateTimeFormat('he', options);
     return dateTimeFormat.format(date)
 }
+
