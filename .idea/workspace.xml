@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/__test__/enToHe.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/__test__/enToHe.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +39,8 @@
       <workItem from="1605065087475" duration="9792000" />
       <workItem from="1605078741593" duration="1206000" />
       <workItem from="1605169079501" duration="1224000" />
-      <workItem from="1605171751692" duration="58000" />
+      <workItem from="1605171751692" duration="220000" />
+      <workItem from="1605172102177" duration="566000" />
     </task>
     <servers />
   </component>

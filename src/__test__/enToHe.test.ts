@@ -1,4 +1,12 @@
-import {dateToVerbal, dateToNumeric, heToDate, heToEn, heDateToVerbal, getDiffBetweenDates} from '../index'
+import {
+    dateToVerbal,
+    dateToNumeric,
+    heToDate,
+    heToEn,
+    heDateToVerbal,
+    getDiffBetweenDates,
+    hasDatePassed
+} from '../index'
 
 test('HelperFunctions', () => {
     expect(dateToNumeric('12/20/2020')).toBe('20/12/2020');
@@ -10,4 +18,6 @@ test('HelperFunctions', () => {
     expect(heDateToVerbal('20/12/2020')).toBe('יום ראשון, 20 בדצמבר 2020');
     expect(getDiffBetweenDates(new Date('12/22/2020'), new Date('12/20/2020'))).toBe(2);
     expect(getDiffBetweenDates('12/22/2020', '12/20/2020')).toBe(2);
+    expect(hasDatePassed('12/22/2030')).toBe(false);
+    expect(hasDatePassed('12/22/2018')).toBe(true);
 });

@@ -24,11 +24,16 @@ export function heToEn(heDate: string): string {
     return `${dateArr[1]}/${dateArr[0]}/${dateArr[2]}`
 }
 
-export function getDiffBetweenDates(date1: Date | string, date2: Date | string) {
+export function getDiffBetweenDates(date1: Date | string, date2: Date | string): number {
     date1 = convertToDateHelper(date1);
     date2 = convertToDateHelper(date2);
     const diffTime = Math.abs(Number(date2) - Number(date1));
     return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+}
+
+export function hasDatePassed(date: Date | string) {
+    date = convertToDateHelper(date);
+    return new Date(date.toDateString()) < new Date(new Date().toDateString());
 }
 
 function convertToDateHelper(date: string | Date): Date {
