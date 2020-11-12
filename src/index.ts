@@ -25,7 +25,8 @@ export function heToEn(heDate: string): string {
 }
 
 export function getDiffBetweenDates(date1: Date | string, date2: Date | string) {
-    [date1, date2].forEach(date => date = convertToDateHelper(date))
+    date1 = convertToDateHelper(date1);
+    date2 = convertToDateHelper(date2);
     const diffTime = Math.abs(Number(date2) - Number(date1));
     return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 }

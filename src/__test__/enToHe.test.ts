@@ -9,4 +9,5 @@ test('HelperFunctions', () => {
     expect(heToEn('20/12/2020')).toBe('12/20/2020');
     expect(heDateToVerbal('20/12/2020')).toBe('יום ראשון, 20 בדצמבר 2020');
     expect(getDiffBetweenDates(new Date('12/22/2020'), new Date('12/20/2020'))).toBe(2);
+    expect(getDiffBetweenDates('12/22/2020', '12/20/2020')).toBe(2);
 });
